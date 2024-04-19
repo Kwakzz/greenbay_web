@@ -15,7 +15,7 @@ Future<Map<String, dynamic>> postRequest(String path, String body) async {
   try {
 
     final response = await https.post(
-      Uri.http(domain, path),
+      Uri.https(domain, path),
       headers: jsonHeader,
       body: body,
     );
@@ -43,13 +43,11 @@ Future<Map<String, dynamic>> postRequest(String path, String body) async {
   } 
   
   catch (e) {
-    print(e);
     result = {
       'status': false,
       'message': 'Error occurred'
     };
   }
-  print (result);
   return result;
 }
 
@@ -58,7 +56,7 @@ Future<Map<String, dynamic>> getMapRequest (String path, Map<String, dynamic> qu
 
   try {
 
-    final uri = queryParams != {} ? Uri.http(domain, path, queryParams) : Uri.http(domain, path);
+    final uri = queryParams != {} ? Uri.https(domain, path, queryParams) : Uri.https(domain, path);
 
     final response = await https.get(
       uri,
@@ -89,7 +87,7 @@ Future<List<Map<String, dynamic>>> getListRequest (String path, Map<String, dyna
 
   try {
 
-    final uri = queryParams != {} ? Uri.http(domain, path, queryParams) : Uri.http(domain, path);
+    final uri = queryParams != {} ? Uri.https(domain, path, queryParams) : Uri.https(domain, path);
 
     final response = await https.get(
       uri,
@@ -122,7 +120,7 @@ Future<Map<String, dynamic>> update(String path, String body) async {
 
   try {
     final response = await https.patch(
-      Uri.http(domain, path),
+      Uri.https(domain, path),
       headers: jsonHeader,
       body: body,
     );

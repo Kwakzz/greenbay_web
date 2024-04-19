@@ -1,68 +1,59 @@
 import 'package:flutter/material.dart';
 
-class ThreadPreview extends StatelessWidget {
+import 'text.dart';
 
+class ThreadPreview extends StatelessWidget {
   final Map<String, dynamic> thread;
 
   const ThreadPreview({
-    super.key, 
+    super.key,
     required this.thread,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 16, left: 24, right: 24), 
       padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            spreadRadius: 5,
-            offset: const Offset(0, 0),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            thread['title'],
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Heading(
+            text: thread['title'],
+            fontSize: 20,
+            weight: FontWeight.bold,
+          ),
+          const SizedBox(height: 8),
+          SubHeading(
+            text: thread['description'],
+            fontSize: 16,
+          ),
+          const SizedBox(height: 8),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.network(
+              "https://cdn.pixabay.com/photo/2018/04/08/10/07/sustainability-3300869_640.jpg",
+              height: 300,
+              width: MediaQuery.of(context).size.width * 0.6,
+              fit: BoxFit.cover,
+              errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                return const Text('😢');
+              },
             ),
           ),
           const SizedBox(height: 8),
-          Text(
-            thread['author'],
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            thread['date'],
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            thread['description'],
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-            ),
+          const Row(
+            children: [
+              SizedBox(width: 16),
+              Icon(Icons.comment),
+              Text("456"), // Replace with actual comment count
+            ],
           ),
         ],
       ),
-
     );
   }
 }

@@ -5,7 +5,7 @@ import 'package:greenbay_web/widgets/text.dart';
 class DisplayImage extends StatelessWidget {
 
 
-  final String displayImage = "../assets/images/save_earth.jpeg";
+  final String displayImage = "assets/images/save_earth.jpeg";
 
   const DisplayImage({
     super.key, 
@@ -27,14 +27,14 @@ class DisplayImage extends StatelessWidget {
           color: Colors.black.withOpacity(0.5),
         ),
         const Positioned(
-          top: 100,
+          top: 120,
           left: 100,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Heading(
-                text: "save the earth\nwith others",
-                fontSize: 30,
+                text: "Save the earth\nwith others",
+                fontSize: 40,
                 weight: FontWeight.w700,
                 color: Colors.white,
               ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:greenbay_web/controllers/events.dart';
 import 'package:greenbay_web/controllers/threads.dart';
 import 'package:greenbay_web/pages/create_event.dart';
 import 'package:greenbay_web/widgets/button.dart';
+import 'package:greenbay_web/widgets/event_preview.dart';
 import 'package:greenbay_web/widgets/navbar.dart';
 import 'package:greenbay_web/widgets/text.dart';
 
@@ -34,7 +36,7 @@ class EventsState extends State<Events> {
             ),
             Expanded(
               child: FutureBuilder(
-                future: getThreads(),
+                future: getEvents(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(
@@ -56,7 +58,10 @@ class EventsState extends State<Events> {
                     return ListView.builder(
                       itemCount: events.length,
                       itemBuilder: (context, index) {
-                        return const Text(""); // Placeholder
+                        Map <String, dynamic> event = events[index];
+                        return EventPreview(
+                          event: event,
+                        );
                       },
                     );
                   }

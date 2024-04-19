@@ -28,18 +28,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 
-fonts:
-    - family: Helvetica
-      fonts:
-        - asset: assets/fonts/Helvetica-Bold.ttf
-        - asset: assets/fonts/Helvetica-BoldOblique.ttf
-        - asset: assets/fonts/helvetica-compressed-5871d14b6903a.otf
-        - asset: assets/fonts/helvetica-light-587ebe5a59211.ttf
-        - asset: assets/fonts/Helvetica-Oblique.ttf
-        - asset: assets/fonts/helvetica-rounded-bold-5871d05ead8de.otf
-        - asset: assets/fonts/Helvetica.ttf
-          style: italic
-
 dependencies:
   flutter:
     sdk: flutter

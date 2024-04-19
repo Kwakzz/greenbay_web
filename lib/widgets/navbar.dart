@@ -8,7 +8,7 @@ import 'package:greenbay_web/widgets/text.dart';
 
 class HomepageNavbar extends StatelessWidget implements PreferredSizeWidget {
 
-  final String logo = "../assets/images/greenbay_logo.png";
+  final String logo = "assets/images/greenbay_logo.png";
 
   @override
   Size get preferredSize => const Size.fromHeight(60);
@@ -90,7 +90,7 @@ class HomepageNavbar extends StatelessWidget implements PreferredSizeWidget {
 
 class NavbarWithOnlyLogo extends StatelessWidget implements PreferredSizeWidget {
 
-  final String logo = "../assets/images/greenbay_logo.png";
+  final String logo = "assets/images/greenbay_logo.png";
 
   @override
   Size get preferredSize => const Size.fromHeight(60);

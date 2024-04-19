@@ -23,7 +23,7 @@ class Heading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.roboto(
+      style: GoogleFonts.montserrat(
         fontSize: fontSize,
         fontWeight: weight,
         color: color,
@@ -54,7 +54,7 @@ class SubHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style:GoogleFonts.roboto(
+      style:GoogleFonts.montserrat(
         fontSize: 16,
         color: color,
         fontWeight: FontWeight.w400,
@@ -83,7 +83,7 @@ class RegularText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.roboto(
+      style: GoogleFonts.montserrat(
         fontSize: 13,
         color: color,
         fontWeight: FontWeight.normal,
